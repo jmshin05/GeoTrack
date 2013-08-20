@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9F544BA17C3A6F500D30C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544B917C3A6F500D30C97 /* UIKit.framework */; };
+		D9F544BC17C3A6F500D30C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BB17C3A6F500D30C97 /* Foundation.framework */; };
+		D9F544BE17C3A6F500D30C97 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */; };
+		D9F544C417C3A6F500D30C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9F544C217C3A6F500D30C97 /* InfoPlist.strings */; };
+		D9F544C617C3A6F500D30C97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544C517C3A6F500D30C97 /* main.m */; };
+		D9F544CA17C3A6F500D30C97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544C917C3A6F500D30C97 /* AppDelegate.m */; };
+		D9F544CC17C3A6F500D30C97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F544CB17C3A6F500D30C97 /* Default.png */; };
+		D9F544CE17C3A6F500D30C97 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F544CD17C3A6F500D30C97 /* Default@2x.png */; };
+		D9F544D017C3A6F500D30C97 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F544CF17C3A6F500D30C97 /* Default-568h@2x.png */; };
+		D9F544D317C3A6F500D30C97 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F544D117C3A6F500D30C97 /* MainStoryboard.storyboard */; };
+		D9F544D617C3A6F500D30C97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544D517C3A6F500D30C97 /* ViewController.m */; };
+		D9F544DE17C3A6F500D30C97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544DD17C3A6F500D30C97 /* SenTestingKit.framework */; };
+		D9F544DF17C3A6F500D30C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544B917C3A6F500D30C97 /* UIKit.framework */; };
+		D9F544E017C3A6F500D30C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BB17C3A6F500D30C97 /* Foundation.framework */; };
+		D9F544E817C3A6F500D30C97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9F544E617C3A6F500D30C97 /* InfoPlist.strings */; };
+		D9F544EB17C3A6F500D30C97 /* geotrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544EA17C3A6F500D30C97 /* geotrackTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9F544E117C3A6F500D30C97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9F544AE17C3A6F500D30C97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9F544B517C3A6F500D30C97;
+			remoteInfo = geotrack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D9F544B617C3A6F500D30C97 /* geotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F544B917C3A6F500D30C97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D9F544BB17C3A6F500D30C97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D9F544C117C3A6F500D30C97 /* geotrack-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geotrack-Info.plist"; sourceTree = "<group>"; };
+		D9F544C317C3A6F500D30C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9F544C517C3A6F500D30C97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D9F544C717C3A6F500D30C97 /* geotrack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "geotrack-Prefix.pch"; sourceTree = "<group>"; };
+		D9F544C817C3A6F500D30C97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D9F544C917C3A6F500D30C97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D9F544CB17C3A6F500D30C97 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D9F544CD17C3A6F500D30C97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D9F544CF17C3A6F500D30C97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D9F544D217C3A6F500D30C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D9F544D417C3A6F500D30C97 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D9F544D517C3A6F500D30C97 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9F544DC17C3A6F500D30C97 /* geotrackTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geotrackTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F544DD17C3A6F500D30C97 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D9F544E517C3A6F500D30C97 /* geotrackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geotrackTests-Info.plist"; sourceTree = "<group>"; };
+		D9F544E717C3A6F500D30C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9F544E917C3A6F500D30C97 /* geotrackTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = geotrackTests.h; sourceTree = "<group>"; };
+		D9F544EA17C3A6F500D30C97 /* geotrackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = geotrackTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9F544B317C3A6F500D30C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544BA17C3A6F500D30C97 /* UIKit.framework in Frameworks */,
+				D9F544BC17C3A6F500D30C97 /* Foundation.framework in Frameworks */,
+				D9F544BE17C3A6F500D30C97 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F544D817C3A6F500D30C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544DE17C3A6F500D30C97 /* SenTestingKit.framework in Frameworks */,
+				D9F544DF17C3A6F500D30C97 /* UIKit.framework in Frameworks */,
+				D9F544E017C3A6F500D30C97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9F544AD17C3A6F500D30C97 = {
+			isa = PBXGroup;
+			children = (
+				D9F544BF17C3A6F500D30C97 /* geotrack */,
+				D9F544E317C3A6F500D30C97 /* geotrackTests */,
+				D9F544B817C3A6F500D30C97 /* Frameworks */,
+				D9F544B717C3A6F500D30C97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9F544B717C3A6F500D30C97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544B617C3A6F500D30C97 /* geotrack.app */,
+				D9F544DC17C3A6F500D30C97 /* geotrackTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9F544B817C3A6F500D30C97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544B917C3A6F500D30C97 /* UIKit.framework */,
+				D9F544BB17C3A6F500D30C97 /* Foundation.framework */,
+				D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */,
+				D9F544DD17C3A6F500D30C97 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F544BF17C3A6F500D30C97 /* geotrack */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544C817C3A6F500D30C97 /* AppDelegate.h */,
+				D9F544C917C3A6F500D30C97 /* AppDelegate.m */,
+				D9F544D117C3A6F500D30C97 /* MainStoryboard.storyboard */,
+				D9F544D417C3A6F500D30C97 /* ViewController.h */,
+				D9F544D517C3A6F500D30C97 /* ViewController.m */,
+				D9F544C017C3A6F500D30C97 /* Supporting Files */,
+			);
+			path = geotrack;
+			sourceTree = "<group>";
+		};
+		D9F544C017C3A6F500D30C97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544C117C3A6F500D30C97 /* geotrack-Info.plist */,
+				D9F544C217C3A6F500D30C97 /* InfoPlist.strings */,
+				D9F544C517C3A6F500D30C97 /* main.m */,
+				D9F544C717C3A6F500D30C97 /* geotrack-Prefix.pch */,
+				D9F544CB17C3A6F500D30C97 /* Default.png */,
+				D9F544CD17C3A6F500D30C97 /* Default@2x.png */,
+				D9F544CF17C3A6F500D30C97 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9F544E317C3A6F500D30C97 /* geotrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544E917C3A6F500D30C97 /* geotrackTests.h */,
+				D9F544EA17C3A6F500D30C97 /* geotrackTests.m */,
+				D9F544E417C3A6F500D30C97 /* Supporting Files */,
+			);
+			path = geotrackTests;
+			sourceTree = "<group>";
+		};
+		D9F544E417C3A6F500D30C97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9F544E517C3A6F500D30C97 /* geotrackTests-Info.plist */,
+				D9F544E617C3A6F500D30C97 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9F544B517C3A6F500D30C97 /* geotrack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F544EE17C3A6F500D30C97 /* Build configuration list for PBXNativeTarget "geotrack" */;
+			buildPhases = (
+				D9F544B217C3A6F500D30C97 /* Sources */,
+				D9F544B317C3A6F500D30C97 /* Frameworks */,
+				D9F544B417C3A6F500D30C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = geotrack;
+			productName = geotrack;
+			productReference = D9F544B617C3A6F500D30C97 /* geotrack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9F544DB17C3A6F500D30C97 /* geotrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F544F117C3A6F500D30C97 /* Build configuration list for PBXNativeTarget "geotrackTests" */;
+			buildPhases = (
+				D9F544D717C3A6F500D30C97 /* Sources */,
+				D9F544D817C3A6F500D30C97 /* Frameworks */,
+				D9F544D917C3A6F500D30C97 /* Resources */,
+				D9F544DA17C3A6F500D30C97 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9F544E217C3A6F500D30C97 /* PBXTargetDependency */,
+			);
+			name = geotrackTests;
+			productName = geotrackTests;
+			productReference = D9F544DC17C3A6F500D30C97 /* geotrackTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9F544AE17C3A6F500D30C97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "James M. Shin";
+			};
+			buildConfigurationList = D9F544B117C3A6F500D30C97 /* Build configuration list for PBXProject "geotrack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D9F544AD17C3A6F500D30C97;
+			productRefGroup = D9F544B717C3A6F500D30C97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9F544B517C3A6F500D30C97 /* geotrack */,
+				D9F544DB17C3A6F500D30C97 /* geotrackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9F544B417C3A6F500D30C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544C417C3A6F500D30C97 /* InfoPlist.strings in Resources */,
+				D9F544CC17C3A6F500D30C97 /* Default.png in Resources */,
+				D9F544CE17C3A6F500D30C97 /* Default@2x.png in Resources */,
+				D9F544D017C3A6F500D30C97 /* Default-568h@2x.png in Resources */,
+				D9F544D317C3A6F500D30C97 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F544D917C3A6F500D30C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544E817C3A6F500D30C97 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D9F544DA17C3A6F500D30C97 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9F544B217C3A6F500D30C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544C617C3A6F500D30C97 /* main.m in Sources */,
+				D9F544CA17C3A6F500D30C97 /* AppDelegate.m in Sources */,
+				D9F544D617C3A6F500D30C97 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9F544D717C3A6F500D30C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F544EB17C3A6F500D30C97 /* geotrackTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9F544E217C3A6F500D30C97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9F544B517C3A6F500D30C97 /* geotrack */;
+			targetProxy = D9F544E117C3A6F500D30C97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D9F544C217C3A6F500D30C97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9F544C317C3A6F500D30C97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D9F544D117C3A6F500D30C97 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9F544D217C3A6F500D30C97 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D9F544E617C3A6F500D30C97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9F544E717C3A6F500D30C97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D9F544EC17C3A6F500D30C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D9F544ED17C3A6F500D30C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9F544EF17C3A6F500D30C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
+				INFOPLIST_FILE = "geotrack/geotrack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D9F544F017C3A6F500D30C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
+				INFOPLIST_FILE = "geotrack/geotrack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D9F544F217C3A6F500D30C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geotrack.app/geotrack";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
+				INFOPLIST_FILE = "geotrackTests/geotrackTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D9F544F317C3A6F500D30C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geotrack.app/geotrack";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
+				INFOPLIST_FILE = "geotrackTests/geotrackTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9F544B117C3A6F500D30C97 /* Build configuration list for PBXProject "geotrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F544EC17C3A6F500D30C97 /* Debug */,
+				D9F544ED17C3A6F500D30C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9F544EE17C3A6F500D30C97 /* Build configuration list for PBXNativeTarget "geotrack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F544EF17C3A6F500D30C97 /* Debug */,
+				D9F544F017C3A6F500D30C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D9F544F117C3A6F500D30C97 /* Build configuration list for PBXNativeTarget "geotrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F544F217C3A6F500D30C97 /* Debug */,
+				D9F544F317C3A6F500D30C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9F544AE17C3A6F500D30C97 /* Project object */;
+}
