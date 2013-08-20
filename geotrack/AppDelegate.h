@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 James M. Shin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Globals.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9CA48FD17C3B5E300BBCC70 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CA48FC17C3B5E300BBCC70 /* Globals.m */; };
 		D9F544BA17C3A6F500D30C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544B917C3A6F500D30C97 /* UIKit.framework */; };
 		D9F544BC17C3A6F500D30C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BB17C3A6F500D30C97 /* Foundation.framework */; };
 		D9F544BE17C3A6F500D30C97 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */; };
@@ -17,7 +18,7 @@
 		D9F544CE17C3A6F500D30C97 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F544CD17C3A6F500D30C97 /* Default@2x.png */; };
 		D9F544D017C3A6F500D30C97 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F544CF17C3A6F500D30C97 /* Default-568h@2x.png */; };
 		D9F544D317C3A6F500D30C97 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F544D117C3A6F500D30C97 /* MainStoryboard.storyboard */; };
-		D9F544D617C3A6F500D30C97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544D517C3A6F500D30C97 /* ViewController.m */; };
+		D9F544D617C3A6F500D30C97 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F544D517C3A6F500D30C97 /* TableViewController.m */; };
 		D9F544DE17C3A6F500D30C97 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544DD17C3A6F500D30C97 /* SenTestingKit.framework */; };
 		D9F544DF17C3A6F500D30C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544B917C3A6F500D30C97 /* UIKit.framework */; };
 		D9F544E017C3A6F500D30C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BB17C3A6F500D30C97 /* Foundation.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9CA48FB17C3B5E300BBCC70 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		D9CA48FC17C3B5E300BBCC70 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		D9F544B617C3A6F500D30C97 /* geotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F544B917C3A6F500D30C97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D9F544BB17C3A6F500D30C97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,8 +53,8 @@
 		D9F544CD17C3A6F500D30C97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D9F544CF17C3A6F500D30C97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D9F544D217C3A6F500D30C97 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D9F544D417C3A6F500D30C97 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D9F544D517C3A6F500D30C97 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9F544D417C3A6F500D30C97 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		D9F544D517C3A6F500D30C97 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D9F544DC17C3A6F500D30C97 /* geotrackTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geotrackTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F544DD17C3A6F500D30C97 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D9F544E517C3A6F500D30C97 /* geotrackTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geotrackTests-Info.plist"; sourceTree = "<group>"; };
@@ -120,8 +123,10 @@
 				D9F544C817C3A6F500D30C97 /* AppDelegate.h */,
 				D9F544C917C3A6F500D30C97 /* AppDelegate.m */,
 				D9F544D117C3A6F500D30C97 /* MainStoryboard.storyboard */,
-				D9F544D417C3A6F500D30C97 /* ViewController.h */,
-				D9F544D517C3A6F500D30C97 /* ViewController.m */,
+				D9F544D417C3A6F500D30C97 /* TableViewController.h */,
+				D9F544D517C3A6F500D30C97 /* TableViewController.m */,
+				D9CA48FB17C3B5E300BBCC70 /* Globals.h */,
+				D9CA48FC17C3B5E300BBCC70 /* Globals.m */,
 				D9F544C017C3A6F500D30C97 /* Supporting Files */,
 			);
 			path = geotrack;
@@ -272,7 +277,8 @@
 			files = (
 				D9F544C617C3A6F500D30C97 /* main.m in Sources */,
 				D9F544CA17C3A6F500D30C97 /* AppDelegate.m in Sources */,
-				D9F544D617C3A6F500D30C97 /* ViewController.m in Sources */,
+				D9F544D617C3A6F500D30C97 /* TableViewController.m in Sources */,
+				D9CA48FD17C3B5E300BBCC70 /* Globals.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +459,7 @@
 				D9F544F017C3A6F500D30C97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9F544F117C3A6F500D30C97 /* Build configuration list for PBXNativeTarget "geotrackTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +468,7 @@
 				D9F544F317C3A6F500D30C97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

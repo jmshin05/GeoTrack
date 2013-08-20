@@ -1,21 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Jz-G8-2yK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="TableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pAN-bm-6k8">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="GeoTagCell" rowHeight="100" id="Nbt-Ht-gRY" customClass="GeoTagCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L0-h1-aFz">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS3-Ng-upl">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="cxD-hL-9lG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8j-Jh-qlY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" type="user" id="nwj-ip-7V3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yJ-sY-Iyj">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="Cpv-fe-q6Z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="TS3-Ng-upl" firstAttribute="leading" secondItem="5L0-h1-aFz" secondAttribute="leading" type="default" id="1EQ-il-0U6"/>
+                                            <constraint firstItem="8yJ-sY-Iyj" firstAttribute="trailing" secondItem="n8j-Jh-qlY" secondAttribute="trailing" type="default" id="DfB-xa-BFb"/>
+                                            <constraint firstItem="8yJ-sY-Iyj" firstAttribute="leading" secondItem="n8j-Jh-qlY" secondAttribute="leading" type="default" id="Sfz-9m-Eoo"/>
+                                            <constraint firstItem="TS3-Ng-upl" firstAttribute="top" secondItem="Nbt-Ht-gRY" secondAttribute="top" constant="33" id="Zwc-7H-cjc"/>
+                                            <constraint firstAttribute="bottom" secondItem="n8j-Jh-qlY" secondAttribute="bottom" constant="30" id="b4Q-Sy-d9G"/>
+                                            <constraint firstItem="n8j-Jh-qlY" firstAttribute="leading" secondItem="Nbt-Ht-gRY" secondAttribute="leading" constant="8" id="c3e-By-XvP"/>
+                                            <constraint firstItem="n8j-Jh-qlY" firstAttribute="trailing" secondItem="TS3-Ng-upl" secondAttribute="trailing" type="default" id="gus-lU-4w0"/>
+                                            <constraint firstItem="5L0-h1-aFz" firstAttribute="top" secondItem="Nbt-Ht-gRY" secondAttribute="top" constant="8" id="lry-QN-EqF"/>
+                                            <constraint firstItem="TS3-Ng-upl" firstAttribute="trailing" secondItem="5L0-h1-aFz" secondAttribute="trailing" type="default" id="prf-9q-kuX"/>
+                                            <constraint firstAttribute="bottom" secondItem="8yJ-sY-Iyj" secondAttribute="bottom" constant="10" id="q86-9C-TAV"/>
+                                            <constraint firstItem="n8j-Jh-qlY" firstAttribute="leading" secondItem="TS3-Ng-upl" secondAttribute="leading" type="default" id="veE-Es-ccJ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="batteryLabel" destination="8yJ-sY-Iyj" id="Wzi-9f-cJX"/>
+                                            <outlet property="dateLabel" destination="n8j-Jh-qlY" id="xHK-DJ-TcA"/>
+                                            <outlet property="geoCoordLabel" destination="TS3-Ng-upl" id="SQk-jg-o6e"/>
+                                            <outlet property="localityLabel" destination="5L0-h1-aFz" id="CPW-wg-Og0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="Lgf-Ej-BBx"/>
+                                    <outlet property="delegate" destination="2" id="zHL-2h-JxE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pAN-bm-6k8" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="1fW-qa-bvB"/>
+                            <constraint firstItem="pAN-bm-6k8" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="5Ea-RH-GXx"/>
+                            <constraint firstItem="pAN-bm-6k8" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ckW-ZH-yMY"/>
+                            <constraint firstItem="pAN-bm-6k8" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="iKY-M5-oZa"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0Wl-sU-TQM"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="pAN-bm-6k8" id="s1w-OG-c6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="946" y="67"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ljW-aE-YaL">
+            <objects>
+                <navigationController id="5Jz-G8-2yK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehf-ZS-PJL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="WYX-de-yi2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KEL-ue-8Sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="437" y="67"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
