@@ -6,9 +6,9 @@ This app logs locality name, geolocation, current date/time, and battery level o
 Version History
 ===============
 
-v0.1 Added UITableView and UINavigationController and hookups
-v0.4 Added background processing, geotagging, and parse backend
-v0.7 Added fixes, icons, and this README
+- v0.1 Added UITableView and UINavigationController and hookups
+- v0.4 Added background processing, geotagging, and parse backend
+- v0.7 Added fixes, icons, and this README
 
 Issues
 ======
