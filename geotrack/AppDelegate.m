@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 
-const double KEEPALIVE_INTERVAL = 530.0;
-
 @interface AppDelegate ()
 
 @property (nonatomic, assign) UIBackgroundTaskIdentifier bgTask;
@@ -35,38 +33,18 @@ const double KEEPALIVE_INTERVAL = 530.0;
 
     // Override point for customization after application launch.
 
+    self.bgTask = UIBackgroundTaskInvalid;
+    self.keepAliveTimer = nil;
+    
     // initialize location manager
-    // check for previous locationManager and stop
-    if (application.applicationState == UIApplicationStateBackground) {
-        if (self.locationManager) {
-            [self.locationManager stopMonitoringSignificantLocationChanges];
-            self.locationManager = nil;
-        }
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-        
-        if (self.bgTask != UIBackgroundTaskInvalid) {
-            [application endBackgroundTask:self.bgTask];
-            self.bgTask = UIBackgroundTaskInvalid;
-        }
-        if (self.keepAliveTimer) {
-            [self.keepAliveTimer invalidate];
-            self.keepAliveTimer = nil;
-            PFObject *testObject = [PFObject objectWithClassName:@"GeoTag"];
-            [testObject setObject:@"keepAliveNotNil" forKey:@"foo"];
-            [testObject save];
-        }
-        [self setupBackgroundTask:application];
-    } else {
-        self.bgTask = UIBackgroundTaskInvalid;
-        self.keepAliveTimer = nil;
-        
-        self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
-    }
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+    [self.locationManager startMonitoringSignificantLocationChanges];
 
+    // if waking from suspension into background state, need to setup background processing
+    if (application.applicationState == UIApplicationStateBackground)
+        [self setupBackgroundTask:application];
     
     return YES;
 }
@@ -112,7 +90,7 @@ const double KEEPALIVE_INTERVAL = 530.0;
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // activating significant location change monitoring will activate the app after reboot
-    [self.locationManager startMonitoringSignificantLocationChanges];
+//    [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
 #pragma mark - Background processing handlers
@@ -125,6 +103,7 @@ const double KEEPALIVE_INTERVAL = 530.0;
     }];
     
     [self.locationManager startUpdatingLocation];
+    [self.locationManager stopUpdatingLocation];
     
     // setup keepAliveTimer to fire 15 seconds before the backgroundTimeRemaining expires
     self.keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KEEPALIVE_INTERVAL target:self selector:@selector(keepAliveTimerFire:) userInfo:nil repeats:YES];

@@ -13,5 +13,10 @@
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
 
+extern const double KEEPALIVE_INTERVAL;
+extern const double GEOTAG_INTERVAL;
+extern const int ROW_HEIGHT;
+extern const int MAX_QUERY_SIZE;
+
 
 #endif  // end #ifndef _GLOBALS

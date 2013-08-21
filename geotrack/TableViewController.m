@@ -9,10 +9,6 @@
 #import "TableViewController.h"
 
 
-const double GEOTAG_INTERVAL = 60.0;
-const int ROW_HEIGHT = 100;
-const int MAX_QUERY_SIZE = 50;
-
 @implementation GeoTagCell
 
 @synthesize localityLabel;
@@ -25,11 +21,12 @@ const int MAX_QUERY_SIZE = 50;
 
 @interface TableViewController ()
 
-@property (nonatomic, assign) BOOL isQuerying;
+@property (nonatomic, assign) BOOL isQuerying;  // flag for checking if refresh in progress
+@property (nonatomic, assign) BOOL isNeedLocation;  // flag to prevent calling didUpdateLocations multiple times
 @property (nonatomic, strong) NSMutableArray *geoTagArray;  // array of PFObjects of GeoTag class
 @property (nonatomic, strong) PFQuery *geoTagQuery;  // array of PFObjects of GeoTag class
 @property (nonatomic, strong) NSTimer *geoTagTimer;  // timer to record geolocation info, batter level, etc.
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;  // core location object for getting geocoords
 
 - (void)geoTagTimerFire:(id)sender;
 - (void)refreshButtonTap:(id)sender;
@@ -39,6 +36,7 @@ const int MAX_QUERY_SIZE = 50;
 @implementation TableViewController
 
 @synthesize isQuerying;
+@synthesize isNeedLocation;
 @synthesize geoTagArray;
 @synthesize geoTagTimer;
 @synthesize locationManager;
@@ -47,6 +45,7 @@ const int MAX_QUERY_SIZE = 50;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.geoTagArray = [NSMutableArray array];
     
@@ -81,7 +80,10 @@ const int MAX_QUERY_SIZE = 50;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    self.isNeedLocation = YES;
     [self.locationManager startUpdatingLocation];
+    
     // setup timer for geotagging; 1 hour intervals
     self.geoTagTimer = [NSTimer scheduledTimerWithTimeInterval:GEOTAG_INTERVAL target:self selector:@selector(geoTagTimerFire:) userInfo:nil repeats:YES];
 }
@@ -96,6 +98,7 @@ const int MAX_QUERY_SIZE = 50;
 
 - (void)geoTagTimerFire:(id)sender
 {
+    self.isNeedLocation = YES;
     [self.locationManager startUpdatingLocation];
 }
 
@@ -104,6 +107,8 @@ const int MAX_QUERY_SIZE = 50;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [manager stopUpdatingLocation];
+    self.isNeedLocation = NO;  // prevent unwanted calls to didUpdateLocations
+    
     if ([locations count] > 0) {
         // save geoTag to Parse
         CLLocation *location = [locations lastObject];

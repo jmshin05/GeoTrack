@@ -8,3 +8,7 @@
 
 #import "Globals.h"
 
+const double KEEPALIVE_INTERVAL = 530.0;
+const double GEOTAG_INTERVAL = 3600.0;
+const int ROW_HEIGHT = 100;
+const int MAX_QUERY_SIZE = 50;
