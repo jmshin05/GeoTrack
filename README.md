@@ -1,7 +1,9 @@
 GEOTRACK
 ========
 
-This app logs locality name, geolocation, current date/time, and battery level once every hour. The app logs from the background and wakes from reset of the device. App shows last 50 geotags in a table.
+- This app logs locality name, geolocation, current date/time, and battery level once every hour.
+- The app logs from the background and wakes from reset of the device.
+- App shows last 50 geotags in a table.
 
 Version History
 ===============
