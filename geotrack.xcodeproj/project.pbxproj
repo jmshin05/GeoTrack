@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D9CA48FD17C3B5E300BBCC70 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = D9CA48FC17C3B5E300BBCC70 /* Globals.m */; };
+		D9D5B7B717C41C2F00A24A7B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7B617C41C2F00A24A7B /* Parse.framework */; };
+		D9D5B7B917C41C9300A24A7B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7B817C41C9300A24A7B /* AudioToolbox.framework */; };
+		D9D5B7BB17C41CA000A24A7B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7BA17C41CA000A24A7B /* CFNetwork.framework */; };
+		D9D5B7BD17C41CB500A24A7B /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7BC17C41CB500A24A7B /* libz.1.1.3.dylib */; };
+		D9D5B7BF17C41CC500A24A7B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7BE17C41CC500A24A7B /* MobileCoreServices.framework */; };
+		D9D5B7C117C41CCD00A24A7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7C017C41CCD00A24A7B /* QuartzCore.framework */; };
+		D9D5B7C317C41CDB00A24A7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7C217C41CDB00A24A7B /* Security.framework */; };
+		D9D5B7C517C41CE300A24A7B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7C417C41CE300A24A7B /* StoreKit.framework */; };
+		D9D5B7C717C41CF200A24A7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5B7C617C41CF200A24A7B /* SystemConfiguration.framework */; };
+		D9EB581A17C3D10900F7248A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EB581917C3D10900F7248A /* CoreLocation.framework */; };
 		D9F544BA17C3A6F500D30C97 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544B917C3A6F500D30C97 /* UIKit.framework */; };
 		D9F544BC17C3A6F500D30C97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BB17C3A6F500D30C97 /* Foundation.framework */; };
 		D9F544BE17C3A6F500D30C97 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */; };
@@ -39,6 +49,16 @@
 /* Begin PBXFileReference section */
 		D9CA48FB17C3B5E300BBCC70 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		D9CA48FC17C3B5E300BBCC70 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		D9D5B7B617C41C2F00A24A7B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D9D5B7B817C41C9300A24A7B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D9D5B7BA17C41CA000A24A7B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D9D5B7BC17C41CB500A24A7B /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		D9D5B7BE17C41CC500A24A7B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D9D5B7C017C41CCD00A24A7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9D5B7C217C41CDB00A24A7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D9D5B7C417C41CE300A24A7B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D9D5B7C617C41CF200A24A7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D9EB581917C3D10900F7248A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D9F544B617C3A6F500D30C97 /* geotrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geotrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F544B917C3A6F500D30C97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D9F544BB17C3A6F500D30C97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,9 +88,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D5B7C717C41CF200A24A7B /* SystemConfiguration.framework in Frameworks */,
+				D9D5B7C517C41CE300A24A7B /* StoreKit.framework in Frameworks */,
+				D9D5B7C317C41CDB00A24A7B /* Security.framework in Frameworks */,
+				D9D5B7C117C41CCD00A24A7B /* QuartzCore.framework in Frameworks */,
+				D9D5B7BF17C41CC500A24A7B /* MobileCoreServices.framework in Frameworks */,
+				D9D5B7BD17C41CB500A24A7B /* libz.1.1.3.dylib in Frameworks */,
+				D9D5B7BB17C41CA000A24A7B /* CFNetwork.framework in Frameworks */,
+				D9D5B7B917C41C9300A24A7B /* AudioToolbox.framework in Frameworks */,
+				D9EB581A17C3D10900F7248A /* CoreLocation.framework in Frameworks */,
 				D9F544BA17C3A6F500D30C97 /* UIKit.framework in Frameworks */,
 				D9F544BC17C3A6F500D30C97 /* Foundation.framework in Frameworks */,
 				D9F544BE17C3A6F500D30C97 /* CoreGraphics.framework in Frameworks */,
+				D9D5B7B717C41C2F00A24A7B /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +139,16 @@
 		D9F544B817C3A6F500D30C97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9D5B7C617C41CF200A24A7B /* SystemConfiguration.framework */,
+				D9D5B7C417C41CE300A24A7B /* StoreKit.framework */,
+				D9D5B7C217C41CDB00A24A7B /* Security.framework */,
+				D9D5B7C017C41CCD00A24A7B /* QuartzCore.framework */,
+				D9D5B7BE17C41CC500A24A7B /* MobileCoreServices.framework */,
+				D9D5B7BC17C41CB500A24A7B /* libz.1.1.3.dylib */,
+				D9D5B7BA17C41CA000A24A7B /* CFNetwork.framework */,
+				D9D5B7B817C41C9300A24A7B /* AudioToolbox.framework */,
+				D9EB581917C3D10900F7248A /* CoreLocation.framework */,
+				D9D5B7B617C41C2F00A24A7B /* Parse.framework */,
 				D9F544B917C3A6F500D30C97 /* UIKit.framework */,
 				D9F544BB17C3A6F500D30C97 /* Foundation.framework */,
 				D9F544BD17C3A6F500D30C97 /* CoreGraphics.framework */,
@@ -387,10 +427,16 @@
 		D9F544EF17C3A6F500D30C97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
 				INFOPLIST_FILE = "geotrack/geotrack-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -398,10 +444,16 @@
 		D9F544F017C3A6F500D30C97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
 				INFOPLIST_FILE = "geotrack/geotrack-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -410,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geotrack.app/geotrack";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -418,6 +471,7 @@
 				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
 				INFOPLIST_FILE = "geotrackTests/geotrackTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -427,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/geotrack.app/geotrack";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -435,6 +490,7 @@
 				GCC_PREFIX_HEADER = "geotrack/geotrack-Prefix.pch";
 				INFOPLIST_FILE = "geotrackTests/geotrackTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};

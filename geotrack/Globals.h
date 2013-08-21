@@ -10,5 +10,8 @@
 #define _GLOBALS   // define _GLOBALS so that Globals.h is not linked again
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
+
 
 #endif  // end #ifndef _GLOBALS

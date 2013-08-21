@@ -17,10 +17,8 @@
 
 @end
 
-@interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *mainTableView;  // table view to display GeoTag info
-
-- (void)refreshButtonTap:(id)sender;
 
 @end

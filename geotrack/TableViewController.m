@@ -9,7 +9,9 @@
 #import "TableViewController.h"
 
 
+const double GEOTAG_INTERVAL = 60.0;
 const int ROW_HEIGHT = 100;
+const int MAX_QUERY_SIZE = 50;
 
 @implementation GeoTagCell
 
@@ -23,32 +25,65 @@ const int ROW_HEIGHT = 100;
 
 @interface TableViewController ()
 
-@property (nonatomic, strong) NSArray *geoTagArray;  // holds PFObjects of GeoTag class
+@property (nonatomic, assign) BOOL isQuerying;
+@property (nonatomic, strong) NSMutableArray *geoTagArray;  // array of PFObjects of GeoTag class
+@property (nonatomic, strong) PFQuery *geoTagQuery;  // array of PFObjects of GeoTag class
+@property (nonatomic, strong) NSTimer *geoTagTimer;  // timer to record geolocation info, batter level, etc.
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
+- (void)geoTagTimerFire:(id)sender;
+- (void)refreshButtonTap:(id)sender;
 
 @end
 
 @implementation TableViewController
 
+@synthesize isQuerying;
 @synthesize geoTagArray;
+@synthesize geoTagTimer;
+@synthesize locationManager;
 @synthesize mainTableView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.geoTagArray = @[@"hello"];
+    self.geoTagArray = [NSMutableArray array];
+    
+    // set up parse query for most recent geotags, up to MAX_QUERY_SIZE
+    self.geoTagQuery = [PFQuery queryWithClassName:@"GeoTag"];
+    [self.geoTagQuery orderByDescending:@"createdAt"];
+    self.geoTagQuery.skip = 0;
+    self.geoTagQuery.limit = MAX_QUERY_SIZE;
+    self.isQuerying = YES;
+    [self.geoTagQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects) {
+            self.geoTagArray = [NSMutableArray arrayWithArray:objects];
+        } else {
+            // if no objects, geoTagArray will be empty better error handling needed here
+            self.geoTagArray = [NSMutableArray array];
+        }
+        self.isQuerying = NO;
+        [self.mainTableView reloadData];
+    }];
     
     // set title for navbar
     self.title = @"geotrack";
     
-    // add refresh and sign out buttons to nav bar
+    // add refresh button to nav bar
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain target:self action:@selector(refreshButtonTap:)];
     self.navigationItem.rightBarButtonItem = barButton;
     
-    barButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signOutButtonTap:)];
-    self.navigationItem.leftBarButtonItem = barButton;
-
     self.navigationItem.hidesBackButton = YES;  // the back button is not necessary for this view
+    
+    // setup geotracking
+    // initialize location manager
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    // setup timer for geotagging; 1 hour intervals
+    self.geoTagTimer = [NSTimer scheduledTimerWithTimeInterval:GEOTAG_INTERVAL target:self selector:@selector(geoTagTimerFire:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,16 +92,61 @@ const int ROW_HEIGHT = 100;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Geotagging handlers
+
+- (void)geoTagTimerFire:(id)sender
+{
+    [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - CLLocationManagerDelegate methods
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [manager stopUpdatingLocation];
+    if ([locations count] > 0) {
+        // save geoTag to Parse
+        CLLocation *location = [locations lastObject];
+        CLGeocoder *reverseGeocoder = [[CLGeocoder alloc] init];  // use reverse geocoding to get locality
+        [reverseGeocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (!error) {
+                CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                PFObject *geoTag = [PFObject objectWithClassName:@"GeoTag"];
+                [geoTag setObject:placemark.locality forKey:@"locality"];
+                PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:location];
+                [geoTag setObject:geoPoint forKey:@"geoPoint"];
+                [geoTag setObject:[NSDate date] forKey:@"tagDate"];
+                [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];  // enable battery monitoring temporarily
+                [geoTag setObject:[NSNumber numberWithFloat:[UIDevice currentDevice].batteryLevel*100.0] forKey:@"batteryLevel"];
+                [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
+                [geoTag saveInBackground];  // need error handling; save to file and try uploading later
+            }
+        }];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    // add error handling; possibly add GeoTag to Parse with failed flag or reduce geotag time interval and try again sooner.
+}
+
 #pragma mark - User interaction handlers
 
 - (void)refreshButtonTap:(id)sender
 {
-    // do stuff
-}
-
-- (void)signOutButtonTap:(id)sender
-{
-    // do stuff
+    if (!self.isQuerying) {
+        self.isQuerying = YES;
+        [self.geoTagQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects) {
+                self.geoTagArray = [NSMutableArray arrayWithArray:objects];
+            } else {
+                // if no objects, geoTagArray will be empty better error handling needed here
+                self.geoTagArray = [NSMutableArray array];
+            }
+            self.isQuerying = NO;
+            [self.mainTableView reloadData];
+        }];
+    }
 }
 
 #pragma mark - Table view data source
@@ -87,7 +167,19 @@ const int ROW_HEIGHT = 100;
 {
     GeoTagCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GeoTagCell" forIndexPath:indexPath];
     
-    cell.localityLabel.text = [self.geoTagArray objectAtIndex:indexPath.row];
+    PFObject *object = [self.geoTagArray objectAtIndex:indexPath.row];
+    // show locality
+    cell.localityLabel.text = [object objectForKey:@"locality"];
+    // show coordinates
+    PFGeoPoint *geoPoint = [object objectForKey:@"geoPoint"];
+    cell.geoCoordLabel.text = [NSString stringWithFormat:@"%.5f, %.5f",geoPoint.latitude,geoPoint.longitude];
+    // show date in local format
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
+    NSDate *date = [object objectForKey:@"tagDate"];
+    cell.dateLabel.text = [NSString stringWithFormat:@"Tagged on %@",[formatter stringFromDate:date]];
+    // show battery level
+    cell.batteryLabel.text = [NSString stringWithFormat:@"Battery Level: %.1f",[[object objectForKey:@"batteryLevel"] floatValue]];
     
     return cell;
 }
