@@ -11,6 +11,7 @@ Version History
 - v0.1 Added UITableView and UINavigationController and hookups
 - v0.4 Added background processing, geotagging, and parse backend
 - v0.7 Added fixes, icons, and this README
+- v0.8 Added user differentiation using hashed UDID
 
 Issues
 ======
