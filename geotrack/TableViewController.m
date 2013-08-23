@@ -27,6 +27,8 @@
 @property (nonatomic, strong) PFQuery *geoTagQuery;  // array of PFObjects of GeoTag class
 @property (nonatomic, strong) NSTimer *geoTagTimer;  // timer to record geolocation info, batter level, etc.
 @property (nonatomic, strong) CLLocationManager *locationManager;  // core location object for getting geocoords
+@property (nonatomic, strong) NSString *userID;  // hashed UDID
+
 
 - (void)geoTagTimerFire:(id)sender;
 - (void)refreshButtonTap:(id)sender;
@@ -40,6 +42,7 @@
 @synthesize geoTagArray;
 @synthesize geoTagTimer;
 @synthesize locationManager;
+@synthesize userID;
 @synthesize mainTableView;
 
 - (void)viewDidLoad
@@ -48,9 +51,11 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.geoTagArray = [NSMutableArray array];
+    self.userID = md5hash([[UIDevice currentDevice] uniqueIdentifier]);
     
     // set up parse query for most recent geotags, up to MAX_QUERY_SIZE
     self.geoTagQuery = [PFQuery queryWithClassName:@"GeoTag"];
+    [self.geoTagQuery whereKey:@"userID" equalTo:self.userID];
     [self.geoTagQuery orderByDescending:@"createdAt"];
     self.geoTagQuery.skip = 0;
     self.geoTagQuery.limit = MAX_QUERY_SIZE;
@@ -124,6 +129,8 @@
                 [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];  // enable battery monitoring temporarily
                 [geoTag setObject:[NSNumber numberWithFloat:[UIDevice currentDevice].batteryLevel*100.0] forKey:@"batteryLevel"];
                 [[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
+                // save UDID hash as well; must be hashed to adhere to Apple policy
+                [geoTag setObject:self.userID forKey:@"userID"];
                 [geoTag saveInBackground];  // need error handling; save to file and try uploading later
             }
         }];

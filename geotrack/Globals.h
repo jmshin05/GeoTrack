@@ -19,4 +19,6 @@ extern const int ROW_HEIGHT;
 extern const int MAX_QUERY_SIZE;
 
 
+NSString *md5hash(NSString *str);
+
 #endif  // end #ifndef _GLOBALS
